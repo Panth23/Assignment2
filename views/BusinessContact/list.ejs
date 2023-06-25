@@ -1,0 +1,59 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="row">
+        <h1><%= title %></h1>
+        <br>
+        <div>
+            <!--Add Button-->
+            <a href="/BusinessContact/add" class="btn btn-primary align-self-end" role="button">
+                <i class="fas fa-plus-circle"></i> 
+                Add a new Business Contact
+            </a>                
+        </div>
+        <br>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <tr>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Number</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center" colspan="3">Actions</th>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+
+                <% for(let i = 0; i < BusinessContactList.length; i++) { %>
+                    <tr>
+                        <td class="text-center"><%= BusinessContactList[i].name %></td>
+                        <td class="text-center"><%= BusinessContactList[i].number %></td>
+                        <td class="text-center"><%= BusinessContactList[i].email %></td>                      
+                        <td class="text-center">
+                            <a href="/BusinessContact/details/<%= BusinessContactList[i]._id %>" class="btn btn-success btn-sm"> 
+                            <i class="fas fa-info"></i> </a>
+                        </td>
+                        <td class="text-center">
+                            <!--Edit Button-->
+                            <a href="/BusinessContact/edit/<%= BusinessContactList[i]._id %>" class="btn btn-primary btn-sm">
+                            <i class="fas fa-pencil-alt"></i></a>
+                        </td>
+                        <td class="text-center">
+                           <!--Delete Button-->
+                            <a href="/BusinessContact/delete/<%= BusinessContactList[i]._id %>" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+  
+  
+  <%- include ../partials/bottom_nav.ejs %>
+
+  <%- include ../partials/footer.ejs %>

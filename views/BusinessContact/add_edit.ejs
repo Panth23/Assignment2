@@ -1,0 +1,65 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Content for the Add_Edit page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <input type="hidden"
+                        name="id"
+                        value="<%= BusinessContact._id %>"
+                    >
+                    <label for="carTextField">Name</label>
+                    <input type="text" class="form-control"
+                        id="NameTextField"
+                        placeholder="Enter the Contact Name"
+                        name="name" 
+                        value="<%= BusinessContact.name %>"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="modelTextField">Number</label>
+                    <input type="number" class="form-control"
+                        id="NumberTextField"
+                        placeholder="Enter a Contact Number"
+                        name="number" 
+                        value="<%= BusinessContact.number %>"
+                        >
+                </div>
+                <br />
+               
+                <div class="form-group">
+                    <label for="YearTextField">Email</label>
+                    <input type="text" class="form-control"
+                        id="EmailTextField"
+                        placeholder="@gmail.com"
+                        name="email" 
+                        value="<%= BusinessContact.email %>"
+                        required>
+                </div>
+
+                <br/>
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> 
+                    Submit
+                </button>
+                
+                <a href="/BusinessContact/list" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> 
+                    Cancel
+                </a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<%- include ../partials/bottom_nav.ejs %>
+
+<%- include ../partials/footer.ejs %>

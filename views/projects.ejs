@@ -1,0 +1,45 @@
+
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+
+  
+  <!--Main Content for about me page-->
+  <main class="container" style="background-color: lightgrey; text-align: center;">
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to the <%= title %> page</h1>
+    </div>
+  </main>
+  <br><br>
+  <section style="padding-left: 30%;">
+  <h1>Projects</h1>
+  <div class="project">
+    <img src="Assets/images/game.jpg" style="width:500px" alt="Project 1">
+    <h2>2-D game</h2>
+    <p>
+      Game look alike of Atari 2600 Space Invaders.
+    </p>
+  </div>
+  <div class="project">
+    <img src="/Assets/images/computers.gif" style="width:500px" alt="Project 2">
+    <h2>Chess engine</h2>
+    <p>
+      A chess Engine just like Stockfish,AlphaZero,Leela etc.
+    </p>
+  </div>
+  <div class="project">
+    <img src="Assets/images/comp.gif" style="width:500px" alt="Project 3">
+    <h2>Educational App</h2>
+    <p>
+      This application will use Augmented reaity to make learning more interesting.
+    </p>
+  </div>
+</section>
+
+  <%- include partials/bottom_nav.ejs %>
+
+
+  <%- include partials/footer.ejs %>
+
+
+

@@ -1,0 +1,84 @@
+<!--Main Nav-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">COMP229</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
+          <li class="nav-item">
+              <% if (title == "Home") { %>
+                <a class="nav-link active" href="/">
+              <% } else { %>
+                <a class="nav-link" href="/">
+              <% } %>            
+                <i class="fas fa-home"></i> Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <% if (title == "About") { %>
+                  <a class="nav-link active" href="/about">
+              <% } else { %>
+                  <a class="nav-link" href="/about">
+              <% } %>            
+                <i class="fa-solid fa-circle-info"></i> About
+                </a>
+            </li>   
+            <li class="nav-item">
+              <% if (title == "Projects") { %>
+                <a class="nav-link active" href="/projects">
+              <% } else { %>
+                <a class="nav-link" href="/projects">
+              <% } %>            
+                <i class="fa-solid fa-diagram-project"></i> Projects 
+              </a>  
+            </li>
+            <li class="nav-item">
+              <% if (title == "Services") { %>
+                  <a class="nav-link active" href="/services">
+              <% } else { %>
+                  <a class="nav-link" href="/services">
+              <% } %>            
+                <i class="fa-solid fa-circle-info"></i> Services
+                </a>
+            </li>   
+            <li class="nav-item">
+              <% if (title == "Contact") { %>
+                  <a class="nav-link active" href="/contact">
+              <% } else { %>
+                  <a class="nav-link" href="/contact">
+              <% } %>            
+                <i class="fa-solid fa-circle-info"></i> Contact
+                </a>
+            </li>      
+            <li class="nav-item">
+              <% if (title == "Business Contact List") { %>
+                  <a class="nav-link active" href="/BusinessContact/list">
+              <% } else { %>
+                  <a class="nav-link" href="/BusinessContact/list">
+              <% } %>            
+                <i class="fa-solid fa-list"></i>Business Contact List
+                </a>
+            </li>      
+            <li class="nav-item">
+              <% if (title == "Add Contact") { %>
+                  <a class="nav-link active" href="/BusinessContact/add">
+              <% } else { %>
+                  <a class="nav-link" href="/BusinessContact/add">
+              <% } %>            
+                <i class="fa-solid fa-plus"></i>Add Contact
+                </a>
+            </li>                      
+            <li class="nav-item">  
+              <% if (typeof userName == 'string' && userName) { %>
+                <a class="nav-link" href="/users/signout" onclick="return confirm('Are you sure?')"><i class="fa fa-door-open"></i> Sign-Out (<%= userName %>)</a>
+              <% } else { %>
+                <a class="nav-link" href="/users/signin"><i class="fa fa-door-closed"></i> Sign-in</a>
+              <% } %>            
+            </li> 
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
